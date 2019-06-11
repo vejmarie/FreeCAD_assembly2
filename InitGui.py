@@ -77,6 +77,11 @@ class Assembly2Workbench (Workbench):
                       'assembly2_randomColorAll']
                     )
 
-    Icon = ':/assembly2/icons/workBenchIcon.svg'
+    import assembly2_locator
+    import os
+    assembly2_path = os.path.dirname(assembly2_locator.__file__)
+    assembly2_icons_path =  os.path.join( assembly2_path, 'Gui', 'Resources', 'icons')
+
+    Icon = os.path.join( assembly2_icons_path , 'workBenchIcon.svg')
 
 Gui.addWorkbench( Assembly2Workbench() )
